@@ -11,7 +11,6 @@ const Layout1 = () => {
            <div className=' flex gap-3 mt-8 w-[90%] mx-auto'>
             <Sidebar />
              <Outlet />
-             <RightBar />
            </div>
     </div>
   )

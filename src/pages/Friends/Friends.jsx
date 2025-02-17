@@ -1,6 +1,7 @@
 import React from 'react';
 import { MoreHorizontal } from 'lucide-react';
 import dp from '../../assets/DP.png'
+import RightBar from '../../layout/RightBar';
 // Define ProfileCard component first
 const ProfileCard = () => {
   return (
@@ -33,6 +34,8 @@ const Friends = () => {
   const profiles = Array(8).fill(null);
   
   return (
+   <div className=' flex gap-2'>
+     <RightBar />
    <div className=' flex flex-col'>
     <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full ml-[26rem] mt-20'>
       <div className="grid grid-cols-2 gap-3">
@@ -60,6 +63,7 @@ const Friends = () => {
        View All
      </button>
      </div>
+   </div>
    </div>
   );
 };

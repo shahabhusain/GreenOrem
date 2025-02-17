@@ -12,6 +12,7 @@ import main from '../../assets/main.png'
 import video from '../../assets/video.mp4'
 import { FaCalendarAlt, FaImages, FaPoll, FaRegSmile, FaTimes } from 'react-icons/fa';
 import { FaSave, FaLink, FaEyeSlash, FaFlag } from 'react-icons/fa';
+import RightBar from '../../layout/RightBar';
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,7 +54,8 @@ const Home = () => {
  
   
   return (
-    <div className=' max-w-[665px] mx-auto w-full ml-[26rem] mt-16'>
+    <div className=' flex gap-2 max-w-[665px] mx-auto w-full ml-[26rem] mt-16'>
+        <RightBar />
           <main className=" p-4">
           <div className="bg-white p-4 rounded-lg shadow-md">
         <div className="flex items-center gap-3">

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { AiOutlineClose, AiOutlinePicture } from "react-icons/ai";
-import { FaRegSmile } from "react-icons/fa";
-import { MdEventAvailable, MdPoll } from "react-icons/md";
-import dp from "./dp.png"; // Replace with actual profile image
+import { FaTimes, FaRegSmile, FaImages, FaCalendarAlt, FaPoll } from "react-icons/fa";
+import dp from "./dp.png"; // Replace with your actual profile image
 
-const PostModel = () => {
+const PostComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -35,8 +33,8 @@ const PostModel = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[600px] relative">
             {/* Close Button */}
-            <AiOutlineClose
-              size={24}
+            <FaTimes
+              size={22}
               className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-gray-700"
               onClick={() => setIsModalOpen(false)}
             />
@@ -47,7 +45,7 @@ const PostModel = () => {
               <div>
                 <h2 className="text-lg font-semibold">Raymond</h2>
                 <button className="border px-2 py-1 text-sm rounded-full flex items-center gap-1">
-                  Public <MdEventAvailable size={14} />
+                  Public <FaCalendarAlt size={12} />
                 </button>
               </div>
             </div>
@@ -66,15 +64,9 @@ const PostModel = () => {
                 className="flex-1 border-none bg-transparent focus:outline-none"
               />
               <FaRegSmile size={22} className="cursor-pointer text-green-600" />
-              <AiOutlinePicture
-                size={22}
-                className="cursor-pointer text-green-600"
-              />
-              <MdEventAvailable
-                size={22}
-                className="cursor-pointer text-green-600"
-              />
-              <MdPoll size={22} className="cursor-pointer text-green-600" />
+              <FaImages size={22} className="cursor-pointer text-green-600" />
+              <FaCalendarAlt size={22} className="cursor-pointer text-green-600" />
+              <FaPoll size={22} className="cursor-pointer text-green-600" />
             </div>
 
             {/* Post Button */}
@@ -90,4 +82,4 @@ const PostModel = () => {
   );
 };
 
-export default PostModel;
+export default PostComponent;
