@@ -8,6 +8,7 @@ import {
 
 import logo from '../assets/LOGO.png';
 import dp from '../assets/DP.png';
+import { Link } from "react-router-dom";
 
 const messages = [
   { id: 1, name: "Carmen Parksouth", message: "Hey, can you check the latest documents posted in the group?", time: "1 day" },
@@ -48,7 +49,7 @@ const HomeHeader = () => {
         
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img src={logo} alt="Greenorum" className="h-8" />
+           <Link to="/" > <img src={logo} alt="Greenorum" className="h-8" /></Link>
         </div>
 
         {/* Search Bar */}
