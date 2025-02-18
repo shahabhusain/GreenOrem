@@ -35,10 +35,9 @@ const Friends = () => {
   
   return (
    <div className=' flex gap-2'>
-     <RightBar />
    <div className=' flex flex-col'>
-    <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full ml-[26rem] mt-20'>
-      <div className="grid grid-cols-2 gap-3">
+    <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full  mt-20'>
+      <div className="grid grid-cols-3 gap-3">
         {profiles.map((_, index) => (
           <ProfileCard key={index} />
         ))}
@@ -50,10 +49,10 @@ const Friends = () => {
     </div>
 
 
-     <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full ml-[26rem] mt-8'>
+     <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full  mt-8'>
      <h1 className=' text-[28px] font-[700] text-black'>Suggestion</h1>
 
-     <div className="grid grid-cols-2 gap-3">
+     <div className="grid grid-cols-3 gap-3">
        {profiles.map((_, index) => (
          <ProfileCard key={index} />
        ))}

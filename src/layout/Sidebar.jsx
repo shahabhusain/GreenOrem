@@ -5,18 +5,37 @@ import { RiVideoLine } from "react-icons/ri";
 import img1 from '../assets/img1.png'
 import img2 from '../assets/img2.png'
 import { FaChevronDown } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 const Sidebar = () => {
-    const [active, setActive] = useState(0)
+    const location = useLocation();
   return (
-    <div className='w-full max-w-[400px] fixed top-28'>
+    <div className='w-full max-w-[400px] mt-20'>
   <aside className=" ">
        <div className=' bg-white   py-6  rounded-tl-[0px] rounded-2xl shadow-md'>
-       <nav className=" flex flex-col gap-8">
-      <Link to="/friends" onClick={() => setActive(1)} className={` ${active === 1 ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full " : "text-green-600 font-[500] "} `}> <div className='flex items-center gap-2 cursor-pointer px-6'><HiUsers size={20} /> Friends</div></Link>
-      <Link to="/group"  onClick={() => setActive(2)} className={` ${active === 2 ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full " : "text-green-600 font-[500] "} `}> <div className='flex items-center gap-2 cursor-pointer px-6'><PiUserSwitchBold size={20} /> Groups</div></Link>
-      <Link to="/spaces" onClick={() => setActive(3)} className={` ${active === 3 ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full " : "text-green-600 font-[500] "} `}> <div className='flex items-center gap-2 cursor-pointer px-6'><RiVideoLine size={20} /> Spaces</div></Link>
- 
+       <nav className="flex flex-col gap-8">
+      <Link 
+        to="/friends" 
+        className={` ${location.pathname === "/friends" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+        <div className="flex items-center gap-2 cursor-pointer px-6">
+          <HiUsers size={20} /> Friends
+        </div>
+      </Link>
+
+      <Link 
+        to="/group" 
+        className={` ${location.pathname === "/group" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+        <div className="flex items-center gap-2 cursor-pointer px-6">
+          <PiUserSwitchBold size={20} /> Groups
+        </div>
+      </Link>
+
+      <Link 
+        to="/group/spaces" 
+        className={` ${location.pathname === "/spaces" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+        <div className="flex items-center gap-2 cursor-pointer px-6">
+          <RiVideoLine size={20} /> Spaces
+        </div>
+      </Link>
     </nav>
        </div>
     <div className="mt-6 bg-white px-4 py-6  rounded-2xl shadow-md">

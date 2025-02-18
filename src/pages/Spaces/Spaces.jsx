@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Clock } from 'lucide-react';
 import gar from '../../assets/gar.png'
 import dp from '../../assets/DP.png'
+import { Link } from 'react-router-dom';
 // Filter tag component
 const FilterTag = ({ label, isActive, onClick }) => {
   return (
@@ -23,7 +24,7 @@ const ArticleCard = ({ image, title, username, views, hours, duration }) => {
   return (
     <div className="mb-6">
       {/* Card image with duration badge */}
-      <div className="relative rounded-lg overflow-hidden mb-3">
+      <Link to="/spacesDetail" className="relative rounded-lg overflow-hidden mb-3">
         <img
           src={gar || '/api/placeholder/400/250?text=Thumbnail'}
           alt={title}
@@ -32,7 +33,7 @@ const ArticleCard = ({ image, title, username, views, hours, duration }) => {
         <span className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-1.5 py-0.5 rounded">
           {duration}
         </span>
-      </div>
+      </Link>
 
       {/* User avatar and article info */}
       <div className="flex items-start">
@@ -184,7 +185,7 @@ const Spaces = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen p-4 md:p-6 mx-auto w-full ml-[26rem] mt-16">
+    <div className="bg-gray-50 min-h-screen p-4 md:p-6 mx-auto w-full my-20">
       {/* Filter tags */}
       <div className="mb-6 overflow-x-auto whitespace-nowrap pb-2">
         {tags.map((tag) => (

@@ -2,6 +2,7 @@ import React from 'react';
 import { Search, ChevronDown } from 'lucide-react';
 import pea from '../../assets/pea.png';
 import gar from '../../assets/gar.png';
+import { Link } from 'react-router-dom';
 
 // Group card component
 const GroupCard = ({ viewMode = false }) => {
@@ -12,13 +13,13 @@ const GroupCard = ({ viewMode = false }) => {
       <h3 className="text-green-600 font-medium px-4 pt-4 pb-2">Eco Friends</h3>
       
       {/* Group image */}
-      <div className="h-32 overflow-hidden">
+      <Link to="/group/detail" className="h-32 overflow-hidden">
         <img
           src={gar}
           alt="Eco Friends event"
-          className="w-full h-full object-cover"
+          className="w-full px-4 h-full object-cover"
         />
-      </div>
+      </Link>
       
       {/* Group info & action */}
       <div className="px-4 py-3 flex justify-between items-center">
@@ -49,7 +50,7 @@ const GroupCard = ({ viewMode = false }) => {
 // Main component
 const Group = () => {
   return (
-    <div className="bg-gray-50 min-h-screen p-4 md:p-6  mx-auto w-full ml-[26rem] mt-16">
+    <div className="bg-gray-50 min-h-screen p-4 md:py-6  mx-auto w-full my-20">
       {/* Search and create bar */}
       <div className="flex justify-between items-center mb-6">
         <div className="relative w-full max-w-md">

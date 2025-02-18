@@ -140,9 +140,9 @@ const HomeHeader = () => {
                {dropdown.type === "profile" && dropdown.open && (
               <div className="absolute right-0 mt-3 w-64 bg-white shadow-lg rounded-lg border p-2">
                 <ul className="text-gray-700">
-                  <li className="p-2 hover:bg-gray-100 rounded flex items-center gap-3 cursor-pointer">
+                  <Link to="/group/user" className="p-2 hover:bg-gray-100 rounded flex items-center gap-3 cursor-pointer">
                     <FaRegUser size={16} className="text-green-600" /> Profile
-                  </li>
+                  </Link>
                   <li className="p-2 hover:bg-gray-100 rounded flex items-center gap-3 cursor-pointer">
                     <FaBolt size={16} className="text-green-600" /> Customer stories
                   </li>

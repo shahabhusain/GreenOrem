@@ -1,10 +1,9 @@
 import HomeHeader from './HomeHeader'
 import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import RightBar from './RightBar'
 import React from 'react'
 
-const Layout1 = () => {
+const GroupLaout = () => {
   return (
     <div className='w-full'>
       <HomeHeader />
@@ -19,13 +18,9 @@ const Layout1 = () => {
           <Outlet />
         </div>
 
-        {/* RightBar - Fixed */}
-        <div className=" h-[calc(100vh-4rem)] sticky top-0">
-          <RightBar />
-        </div>
       </div>
     </div>
   )
 }
 
-export default Layout1
+export default GroupLaout

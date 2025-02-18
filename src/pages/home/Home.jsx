@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { AiOutlineClose, AiOutlinePicture } from "react-icons/ai";
+import { AiOutlinePicture } from "react-icons/ai";
 import { RiCalendarEventFill } from "react-icons/ri";
-import { MdEventAvailable, MdOutlinePoll, MdPoll } from "react-icons/md";
+import { MdOutlinePoll } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import dp from '../../assets/DP.png'
 import { FaEarthAfrica } from "react-icons/fa6";
@@ -12,7 +12,6 @@ import main from '../../assets/main.png'
 import video from '../../assets/video.mp4'
 import { FaCalendarAlt, FaImages, FaPoll, FaRegSmile, FaTimes } from 'react-icons/fa';
 import { FaSave, FaLink, FaEyeSlash, FaFlag } from 'react-icons/fa';
-import RightBar from '../../layout/RightBar';
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,8 +53,7 @@ const Home = () => {
  
   
   return (
-    <div className=' flex gap-2 max-w-[665px] mx-auto w-full ml-[26rem] mt-16'>
-        <RightBar />
+    <div className=' flex gap-2 max-w-[665px]  mx-auto w-full my-16'>
           <main className=" p-4">
           <div className="bg-white p-4 rounded-lg shadow-md">
         <div className="flex items-center gap-3">

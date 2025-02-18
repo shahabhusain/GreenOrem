@@ -5,7 +5,7 @@ import { FaChevronDown } from 'react-icons/fa'
 import gro from '../assets/gro.png'
 const RightBar = () => {
   return (
-    <div className=' w-full max-w-[300px]  fixed top-28 right-12'>
+    <div className=' w-full max-w-[300px] mt-20 '>
           <aside className=" ">
                <div className='p-4 bg-white rounded-2xl rounded-tr-[0px] rounded-br-[0px] shadow-md'>
                <h3 className="font-bold text-green-600">Events</h3>
