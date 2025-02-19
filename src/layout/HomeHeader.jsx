@@ -20,6 +20,7 @@ const messages = [
 
 const HomeHeader = () => {
   const [dropdown, setDropdown] = useState({ type: null, open: false });
+  const [isExpanded, setIsExpanded] = useState(false);
   const messageRef = useRef(null);
   const notificationRef = useRef(null);
   const profileRef = useRef(null);
@@ -54,14 +55,22 @@ const HomeHeader = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center bg-gray-100 rounded-full px-4 py-1 w-40">
-          <IoSearchCircleOutline className="text-gray-500" size={44} />
-          <input
-            type="text"
-            placeholder="Search...."
-            className="bg-transparent outline-none ml-2 text-gray-500 w-full"
-          />
-        </div>
+        <div
+      className={`flex items-center bg-gray-100 rounded-full px-4 py-1 transition-all duration-300 ${
+        isExpanded ? "w-[22rem]" : "w-40"
+      }`}
+    >
+      <IoSearchCircleOutline className="text-gray-500" size={44} />
+      <input
+        type="text"
+        placeholder="Search..."
+        className="bg-transparent outline-none ml-2 text-gray-500 w-full"
+        onFocus={() => setIsExpanded(true)} // Expand when focused
+        onBlur={() => setIsExpanded(false)} // Collapse when focus is lost
+        onChange={() => setIsExpanded(true)} // Keep expanded while typing
+      />
+    </div>
+
 
         {/* Icons and Profile */}
         <div className="flex items-center gap-4">

@@ -7,7 +7,7 @@ const GroupLaout = () => {
   return (
     <div className='w-full'>
       <HomeHeader />
-      <div className='max-w-[1555px] flex gap-3 mt-8 w-[90%] mx-auto'>
+      <div className='max-w-[1555px] flex gap-3 mt-8 w-[95%] mx-auto'>
         {/* Sidebar - Fixed */}
         <div className=" h-[calc(100vh-4rem)] sticky top-20">
           <Sidebar />
