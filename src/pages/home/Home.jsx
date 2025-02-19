@@ -10,7 +10,7 @@ import { FaShare } from "react-icons/fa6";
 import { FaRegComment } from "react-icons/fa6";
 import main from '../../assets/main.png'
 import video from '../../assets/video.mp4'
-import { FaCalendarAlt, FaImages, FaPoll, FaRegSmile, FaTimes } from 'react-icons/fa';
+import { FaCalendarAlt, FaChevronDown, FaImages, FaPoll, FaRegSmile, FaTimes } from 'react-icons/fa';
 import { FaSave, FaLink, FaEyeSlash, FaFlag } from 'react-icons/fa';
 
 const Home = () => {
@@ -53,7 +53,7 @@ const Home = () => {
  
   
   return (
-    <div className=' flex gap-2 max-w-[665px]  mx-auto w-full my-16'>
+    <div className=' flex gap-2 max-w-[665px] mx-auto w-full '>
           <main className=" p-4">
           <div className="bg-white p-4 rounded-lg shadow-md">
         <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ const Home = () => {
                  <input
                    type="text"
                    placeholder="Start a post..."
-                   className="w-full p-2 border rounded-full px-4 cursor-pointer"
+                   className="w-full p-2 border-[#25B74D] border-[1px] rounded-full px-4 cursor-pointer"
                    onClick={() => setIsModalOpen(true)}
                    readOnly // Prevents typing (triggers modal instead)
                  />
@@ -78,7 +78,7 @@ const Home = () => {
             {/* Close Button */}
             <FaTimes
               size={22}
-              className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-gray-700"
+              className="absolute top-4 right-4 cursor-pointer bg-gray-100 rounded-full py-0.5 px-0.5 text-green-600 hover:text-gray-700"
               onClick={() => setIsModalOpen(false)}
             />
 
@@ -88,7 +88,7 @@ const Home = () => {
               <div className=' relative'>
                 <h2 className="text-lg font-semibold">Raymond</h2>
                 <button  onClick={toggleDropdown3} className="border px-2 py-1 text-sm rounded-full flex items-center gap-1">
-                  Public <FaCalendarAlt size={12} />
+                  Public <FaEarthAfrica  size={12} /> <FaChevronDown size={12} />
                 </button>
               </div>
               {isOpen3 && (
@@ -129,14 +129,14 @@ const Home = () => {
 
             {/* Post Content */}
             <textarea
-              className="w-full p-3 rounded-md mt-3 h-32 focus:outline-none"
+              className="w-full p-3 rounded-md mt-3 focus:outline-none"
               placeholder="Write a post..."
             />
 
             {/* Uploaded Image Preview */}
             {image && (
-              <div className="mt-3">
-                <img src={image} alt="Uploaded" className="w-[100px] rounded-lg" />
+              <div className="mt-3 overflow-y-auto w-[100%] h-[100px] scrollbar-custom">
+                <img src={image} alt="Uploaded" className=" w-full  rounded-lg" />
               </div>
             )}
 

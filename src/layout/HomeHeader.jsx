@@ -5,6 +5,7 @@ import {
   FaLayerGroup, FaBolt, FaCubes, FaHandsHelping, FaClipboardList, 
   FaRegFileAlt, FaSignOutAlt 
 } from "react-icons/fa";
+import { IoSearchCircleOutline } from "react-icons/io5";
 
 import logo from '../assets/LOGO.png';
 import dp from '../assets/DP.png';
@@ -53,8 +54,8 @@ const HomeHeader = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 w-64">
-          <Search className="text-gray-500" size={18} />
+        <div className="flex items-center bg-gray-100 rounded-full px-4 py-1 w-40">
+          <IoSearchCircleOutline className="text-gray-500" size={44} />
           <input
             type="text"
             placeholder="Search...."
@@ -68,13 +69,13 @@ const HomeHeader = () => {
           {/* Messages Dropdown */}
           <div className="relative " ref={messageRef}>
             <div
-              className="p-2 bg-gray-200 rounded-full cursor-pointer"
+              className={`p-2 bg-gray-200 rounded-full ${dropdown.type === "messages" ? "border-green-600 border-[1px]" : ""} cursor-pointer`}
               onClick={() => setDropdown({ type: "messages", open: dropdown.type !== "messages" })}
             >
               <MessageSquare className="text-green-600" size={20} />
             </div>
             {dropdown.type === "messages" && dropdown.open && (
-              <div className="absolute right-0 mt-3 w-80  bg-white shadow-lg rounded-lg border p-2">
+              <div className="absolute right-0 mt-3 w-[520px]  bg-white shadow-lg rounded-lg border-green-600 border-[1px] p-2">
                 <h3 className="text-gray-800 font-semibold p-2">Messages</h3>
                 <ul className=" overflow-y-auto">
                   {messages.map((msg) => (
@@ -88,7 +89,7 @@ const HomeHeader = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="py-2 px-5 bg-green-600 text-white rounded-md w-full font-medium">
+                <button className="py-2 px-5 bg-green-600 mt-12 text-white rounded-md w-full font-medium">
                   View All
                 </button>
               </div>
@@ -98,13 +99,13 @@ const HomeHeader = () => {
           {/* Notifications Dropdown */}
           <div className="relative" ref={notificationRef}>
             <div
-              className="p-2 bg-gray-200 rounded-full cursor-pointer"
+              className={`p-2 bg-gray-200 ${dropdown.type === "notifications" ? "border-green-600 border-[1px]" : ""} rounded-full cursor-pointer`}
               onClick={() => setDropdown({ type: "notifications", open: dropdown.type !== "notifications" })}
             >
               <Bell className="text-green-600" size={20} />
             </div>
             {dropdown.type === "notifications" && dropdown.open && (
-              <div className="absolute right-0 mt-3 w-80 bg-white shadow-lg rounded-lg border p-2">
+              <div className="absolute right-0 mt-3 w-80 bg-white border-[1px] shadow-lg rounded-lg border-green-600 p-2">
                 <h3 className="text-gray-800 font-semibold p-2">Notifications</h3>
                 <ul className=" overflow-y-auto">
                   {messages.map((msg) => (
@@ -118,7 +119,7 @@ const HomeHeader = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="py-2 px-5 bg-green-600 text-white rounded-md w-full font-medium">
+                <button className="py-2 px-5 bg-green-600 text-white rounded-md mt-12 w-full font-medium">
                   View All
                 </button>
               </div>
@@ -128,7 +129,7 @@ const HomeHeader = () => {
           {/* Profile Dropdown */}
           <div className="relative" ref={profileRef}>
             <div
-              className="flex items-center bg-gray-100 px-3 py-1 rounded-full cursor-pointer"
+              className={`flex items-center bg-gray-100 ${dropdown.type === "profile" ? "border-green-600 border-[1px]" : ""} px-3 py-1 rounded-full cursor-pointer`}
               onClick={() => setDropdown({ type: "profile", open: dropdown.type !== "profile" })}
             >
               <img src={dp} alt="User Avatar" className="h-8 w-8 rounded-full" />
@@ -138,8 +139,8 @@ const HomeHeader = () => {
             
 
                {dropdown.type === "profile" && dropdown.open && (
-              <div className="absolute right-0 mt-3 w-64 bg-white shadow-lg rounded-lg border p-2">
-                <ul className="text-gray-700">
+              <div className="absolute right-0 mt-3 w-64 bg-white border-[1px] shadow-lg rounded-lg border-green-600 p-2">
+                <ul className="text-gray-700 shadow-md m-1 rounded-sm border-[1px] border-gray-100">
                   <Link to="/group/user" className="p-2 hover:bg-gray-100 rounded flex items-center gap-3 cursor-pointer">
                     <FaRegUser size={16} className="text-green-600" /> Profile
                   </Link>
@@ -173,12 +174,19 @@ const HomeHeader = () => {
                 </ul>
 
                 {/* Divider */}
-                <div className="border-t my-2"></div>
-
+                <div className="my-2"></div>
+                 <div className=" grid grid-cols-2 gap-2 mt-5 mx-2">
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">About us</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Support</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Press</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Contact</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Careers</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Sitemap</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Legal</li>
+                  <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Cookie setting</li>
+                 </div>
                 {/* Logout Button */}
-                <button className="w-full text-left bg-green-600 text-white p-2 rounded hover:bg-gray-100 flex items-center justify-center gap-3">
-                  <FaSignOutAlt size={16} /> Log out
-                </button>
+                <button className="w-full bg-green-600 text-white p-2 rounded font-[600] cursor-pointer  text-center mt-4">Log out</button>
               </div>
             )}
 

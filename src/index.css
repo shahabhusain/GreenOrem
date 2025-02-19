@@ -15,7 +15,23 @@ body{
     background-repeat: no-repeat;
 }
 
-.scrollbar-hidden::-webkit-scrollbar {
-    display: none;
+/* Custom Scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
   }
+  
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light gray background */
+    border-radius: 10px;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #25B74D; /* Change this to your desired color */
+    border-radius: 10px;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #25B74D; /* Slightly lighter shade on hover */
+  }
+  
   

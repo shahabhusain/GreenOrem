@@ -15,7 +15,7 @@ const Layout1 = () => {
         </div>
 
         {/* Main Content - Scrollable */}
-        <div className="flex-1 h-[calc(100vh-4rem)] scrollbar-hidden w-full overflow-y-auto overflow-x-hidden">
+        <div className="flex-1 h-[calc(100vh-8rem)] mt-20 scrollbar-custom w-full overflow-y-auto overflow-x-hidden">
           <Outlet />
         </div>
 

@@ -5,7 +5,7 @@ import { FaChevronDown } from 'react-icons/fa'
 import gro from '../assets/gro.png'
 const RightBar = () => {
   return (
-    <div className=' w-full max-w-[300px] mt-20 '>
+    <div className=' w-full max-w-[300px] mt-22 '>
           <aside className=" ">
                <div className='p-4 bg-white rounded-2xl rounded-tr-[0px] rounded-br-[0px] shadow-md'>
                <h3 className="font-bold text-green-600">Events</h3>
@@ -20,7 +20,7 @@ const RightBar = () => {
                </div>
                <div className=' mt-6'>
        <h3 className=" font-bold text-green-600 text-[28px]">Contacts</h3>
-       <ul className="space-y-2 mt-5 overflow-y-auto h-[160px] scrollbar-hidden">
+       <ul className="space-y-2 mt-5 overflow-y-auto h-[160px] scrollbar-custom ">
   <li className="p-2 rounded-lg flex items-center gap-3"><img src={gro} alt="" />Clara Cross</li>
   <li className="p-2 rounded-lg flex items-center gap-3"><img src={gro} alt="" />Clara Cross</li>
   <li className="p-2 rounded-lg flex items-center gap-3"><img src={gro} alt="" />Clara Cross</li>

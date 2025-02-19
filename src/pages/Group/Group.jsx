@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const GroupCard = ({ viewMode = false }) => {
   return (
    <div className=''>
-     <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow ">
+     <div className="bg-white rounded-lg overflow-hidden scrollbar-custom shadow-sm hover:shadow-md transition-shadow ">
       {/* Group title */}
       <h3 className="text-green-600 font-medium px-4 pt-4 pb-2">Eco Friends</h3>
       

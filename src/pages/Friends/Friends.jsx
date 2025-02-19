@@ -36,7 +36,7 @@ const Friends = () => {
   return (
    <div className=' flex gap-2'>
    <div className=' flex flex-col'>
-    <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full  mt-20'>
+    <div className='max-w-[670px] bg-white p-4 rounded-xl mx-auto w-full mt-4'>
       <div className="grid grid-cols-3 gap-3">
         {profiles.map((_, index) => (
           <ProfileCard key={index} />
