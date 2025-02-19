@@ -27,10 +27,13 @@ export const router = createBrowserRouter(
       {/* Group layout */}
       <Route path="/group" element={<GroupLayout />}>
         <Route index element={<Group />} />
-        <Route path="/group/spaces" element={<Spaces />} />
         <Route path="/group/detail" element={<GroupDetail />} />
         <Route path="/group/edit" element={<Edite />} />
         <Route path="/group/user" element={<UserProfile />} />
+      </Route>
+
+      <Route path="/space" element={<GroupLayout />}>
+        <Route index element={<Spaces />} />
       </Route>
 
 

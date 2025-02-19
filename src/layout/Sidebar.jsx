@@ -30,12 +30,12 @@ const Sidebar = () => {
       </Link>
 
       <Link 
-        to="/group/spaces" 
-        className={` ${location.pathname === "/spaces" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
-        <div className="flex items-center gap-2 cursor-pointer px-6">
-          <RiVideoLine size={20} /> Spaces
-        </div>
-      </Link>
+  to="/space" 
+  className={` ${location.pathname === "/space" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+  <div className="flex items-center gap-2 cursor-pointer px-6">
+    <RiVideoLine size={20} /> Spaces
+  </div>
+</Link>
     </nav>
        </div>
     <div className="mt-6 bg-white px-4 py-6  rounded-2xl shadow-md">
