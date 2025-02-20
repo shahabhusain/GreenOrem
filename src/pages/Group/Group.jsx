@@ -50,7 +50,7 @@ const GroupCard = ({ viewMode = false }) => {
 // Main component
 const Group = () => {
   return (
-    <div className="bg-gray-50 min-h-screen p-4 md:py-6  mx-auto w-full my-20">
+    <div className="bg-gray-50 min-h-screen p-4 md:py-6  mx-auto w-full mt-24">
       {/* Search and create bar */}
       <div className="flex justify-between items-center mb-6">
         <div className="relative w-full max-w-md">

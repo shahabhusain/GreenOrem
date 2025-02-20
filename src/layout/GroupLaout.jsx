@@ -7,14 +7,14 @@ const GroupLaout = () => {
   return (
     <div className='w-full'>
       <HomeHeader />
-      <div className='max-w-[1555px] flex gap-3 mt-8 w-[95%] mx-auto'>
+      <div className='max-w-[1555px] flex gap-3 mt-3 w-[98%] mx-auto'>
         {/* Sidebar - Fixed */}
-        <div className=" h-[calc(100vh-4rem)] sticky top-20">
+        <div className=" h-[calc(100vh-4rem)] sticky top-20 mt-18">
           <Sidebar />
         </div>
 
         {/* Main Content - Scrollable */}
-        <div className="flex-1 h-[calc(100vh-4rem)] scrollbar-custom w-full overflow-y-auto overflow-x-hidden">
+        <div className="flex-1 h-[calc(100vh-0rem)] scrollbar-custom w-full overflow-y-auto overflow-x-hidden">
           <Outlet />
         </div>
 

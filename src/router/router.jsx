@@ -14,6 +14,7 @@ import GroupLayout from "../layout/GroupLaout"; // Fixed import name
 import GroupDetail from "../pages/Group/GroupDetail";
 import Edite from "../pages/Group/Edite";
 import UserProfile from "../pages/home/UserProfile";
+import Messages from "../pages/Messages/Messages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ export const router = createBrowserRouter(
       {/* Spaces detail layout */}
       <Route path="spacesDetail" element={<VideoLayout />}>
         <Route index element={<SpacesDetail />} />
+        <Route path="/spacesDetail/messages" element={<Messages />} />
       </Route>
 
       {/* Authentication Routes */}

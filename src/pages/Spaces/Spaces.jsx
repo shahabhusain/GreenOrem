@@ -185,7 +185,7 @@ const Spaces = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen p-4 md:p-6 mx-auto w-full my-20">
+    <div className="bg-gray-50 min-h-screen p-4 md:p-6 mx-auto w-full my-24">
       {/* Filter tags */}
       <div className="mb-6 overflow-x-auto whitespace-nowrap pb-2">
         {tags.map((tag) => (

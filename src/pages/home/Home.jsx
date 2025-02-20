@@ -53,7 +53,7 @@ const Home = () => {
  
   
   return (
-    <div className=' flex gap-2 max-w-[665px] mx-auto w-full '>
+    <div className=' flex gap-2  w-full '>
           <main className=" p-4">
           <div className="bg-white p-4 rounded-lg shadow-md">
         <div className="flex items-center gap-3">

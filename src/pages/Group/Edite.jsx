@@ -25,14 +25,14 @@ const Edite = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-4 mt-20">
+    <div className=" w-full bg-white shadow-lg rounded-lg p-4 mt-24">
       <div className="relative">
         <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" id="banner-upload" />
         <label htmlFor="banner-upload" className="cursor-pointer">
           <img
             src={bannerImage || def}
             alt="Banner"
-            className="w-full h-72 object-cover rounded-lg"
+            className="w-full h-[22rem] object-cover rounded-lg"
           />
         </label>
       </div>

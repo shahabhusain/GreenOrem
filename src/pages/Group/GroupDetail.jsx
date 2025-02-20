@@ -46,8 +46,8 @@ const GroupDetail = () => {
       };
   return (
     <>
-    <div className='mt-20 relative'>
-      <img className=' ' src={bac} alt="image" />
+    <div className='mt-24 relative'>
+      <img className=' w-full' src={bac} alt="image" />
       <div className=' absolute bottom-10 left-5'>
          <h1 className=' text-[41px] font-[700] text-white'>Eco Friends</h1>
          <div className=' flex items-center gap-5'>
@@ -61,7 +61,7 @@ const GroupDetail = () => {
      <div className=' mt-4 flex gap-6'>
 
 
-     <div className='w-[70%]'>
+     <div className='w-[80%]'>
          <div className="bg-white p-4 rounded-lg shadow-md">
                <div className="flex items-center gap-3">
                         <img

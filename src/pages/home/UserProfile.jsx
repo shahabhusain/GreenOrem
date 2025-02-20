@@ -22,20 +22,20 @@ const userInfo = {
   };
   
   const suggestions = [
-    { id: 1, name: "Eddie Lobanovskiy", email: "lobanovskiy@gmail.com", avatar: "https://i.pravatar.cc/40?img=1" },
-    { id: 2, name: "Alexey Stave", email: "alexeyst@gmail.com", avatar: "https://i.pravatar.cc/40?img=2" },
-    { id: 3, name: "Anton Tkacheve", email: "tkacheveanton@gmail.com", avatar: "https://i.pravatar.cc/40?img=3" },
+    { id: 1, name: "Eddie Lobanovskiy", email: "lobanovskiy@gmail.com", avatar: dp },
+    { id: 2, name: "Alexey Stave", email: "alexeyst@gmail.com", avatar: dp },
+    { id: 3, name: "Anton Tkacheve", email: "tkacheveanton@gmail.com", avatar: dp },
   ];
   
   const activeUsers = [
-    { id: 1, name: "Shelby Goode", status: "Online", time: "1 min ago", avatar: "https://i.pravatar.cc/40?img=4" },
-    { id: 2, name: "Robert Bacins", status: "Busy", time: "9 min ago", avatar: "https://i.pravatar.cc/40?img=5" },
-    { id: 3, name: "John Carilo", status: "Online", time: "15 min ago", avatar: "https://i.pravatar.cc/40?img=6" },
-    { id: 4, name: "Adriene Watson", status: "Online", time: "21 min ago", avatar: "https://i.pravatar.cc/40?img=7" },
+    { id: 1, name: "Shelby Goode", status: "Online", time: "1 min ago", avatar: dp },
+    { id: 2, name: "Robert Bacins", status: "Busy", time: "9 min ago", avatar: dp },
+    { id: 3, name: "John Carilo", status: "Online", time: "15 min ago", avatar: dp },
+    { id: 4, name: "Adriene Watson", status: "Online", time: "21 min ago", avatar: dp },
   ];
 
   const AboutSection = () => (
-    <div className="bg-white shadow-md rounded-lg p-4 border-[1px] border-[#00000026]">
+    <div className="bg-white  rounded-lg p-4 ">
       <h3 className="text-green-600 font-semibold text-lg mb-3">About</h3>
       <ul className="space-y-3 text-gray-700">
         <li className="flex items-center gap-2"><FaUser className="text-green-600" /> {userInfo.gender}</li>
@@ -48,7 +48,7 @@ const userInfo = {
   );
   
   const Suggestions = () => (
-    <div className="bg-white shadow-md rounded-lg p-4 mt-4 border-[1px] border-[#00000026]">
+    <div className="bg-white rounded-lg p-4 mt-4 ">
       <h3 className="text-green-600 font-semibold text-lg mb-3">You might know</h3>
       <ul className="space-y-3">
         {suggestions.map((user) => (
@@ -65,7 +65,7 @@ const userInfo = {
   );
   
   const ActiveUsers = () => (
-    <div className="bg-white shadow-md rounded-lg p-4 mt-4 border-[1px] border-[#00000026]">
+    <div className="bg-white  rounded-lg p-4 mt-4 ">
       <h3 className="text-green-600 font-semibold text-lg mb-3">Active</h3>
       <ul className="space-y-3">
         {activeUsers.map((user) => (
@@ -106,7 +106,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className=" w-full mt-20  mx-auto shadow-lg rounded-lg overflow-hidden bg-white">
+    <div className=" w-full mt-24  mx-auto  rounded-lg overflow-hidden ">
       {/* Cover Photo */}
       <div className=" relative">
         <img
@@ -114,12 +114,14 @@ const UserProfile = () => {
           alt="Cover"
           className="w-full h-72 object-cover"
         />
-        <label className="absolute top-4 right-4 bg-white text-green-600 px-4 py-2 rounded-lg cursor-pointer shadow-md text-sm">
+        <label className="absolute top-4 right-4 bg-white text-green-600 px-4 py-2 rounded-lg cursor-pointer text-sm">
           Edit Cover Photo
           <input type="file" className="hidden" onChange={handleCoverChange} />
         </label>
-        <div className="p-6 flex  items-center text-center absolute top-32 left-4 ">
-        <div className="relative w-24 h-24 rounded-full overflow-hidden shadow-md">
+       
+      </div>
+      <div className="p-6 flex flex-col text-center relative  l ">
+        <div className=" absolute top-[-4rem] eft-[26rem] w-24 h-24 rounded-full overflow-hidden ">
           <img
             src={profilePhoto || im}
             alt="Profile"
@@ -127,22 +129,22 @@ const UserProfile = () => {
           />
         </div>
 
-          <div className=" flex flex-col">
-          <h2 className="text-xl font-semibold mt-4 text-black">Charles Deo</h2>
-        <p className="text-black text-sm">UI/UX Designer</p>
+          <div className=" flex gap-5 items-center">
+         <div className=" flex flex-col">
+         <h2 className="text-xl font-semibold mt-4 text-black">Charles Deo</h2>
+         <p className="text-black text-sm">UI/UX Designer</p>
+         </div>
 
-        <label className=" border-green-600 border-[1px] text-black px-3 py-1 rounded-lg cursor-pointer shadow-md text-sm mt-4">
+        <label className=" bg-green-600  text-white px-4 py-2 rounded-lg cursor-pointer  text-sm mt-4">
         Edit Profile
           <input type="file" className="hidden" onChange={handleProfileChange} />
         </label>
           </div>
       </div>
-      </div>
-
-         <div className=" flex justify-between mt-12">
-         <div className="w-[60%] flex flex-col gap-5">
+         <div className=" flex justify-between ">
+         <div className="w-[60%] flex flex-col ">
              {/* Profile Section */}
-        <div className="bg-white border-[1px] border-[#00000026] p-4 rounded-lg shadow-md">
+        <div className="bg-white  p-4 rounded-lg ">
               <div className="flex items-center gap-3">
                        <img
                          src={dp}
@@ -165,7 +167,7 @@ const UserProfile = () => {
      
 
      {/*  */}
-         <div className="mt-4 border-[1px] border-[#00000026] bg-white p-4 rounded-lg shadow-md">
+         <div className="mt-4  bg-white p-4 rounded-lg ">
               <div className=' flex justify-between'>
               <h4 className="font-bold flex items-center gap-2"> <img src={dp} alt="" /> <span className=' flex flex-col gap-1'>Jane Smith <p className=' text-[14px] font-[400] flex items-center gap-1 text-green-600'>30m • <FaEarthAfrica size={10} /></p></span></h4>
               <div className="relative">
@@ -175,7 +177,7 @@ const UserProfile = () => {
              onClick={toggleDropdown1}
            />
            {isOpen1 && (
-             <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+             <div className="absolute right-0 mt-2 w-48 rounded-md  bg-white ring-1 ring-black ring-opacity-5">
                <div className="py-1">
                  <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                    <FaSave className="mr-2" />
