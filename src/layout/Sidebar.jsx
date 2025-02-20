@@ -16,7 +16,7 @@ const Sidebar = () => {
        <nav className="flex flex-col gap-8">
       <Link 
         to="/friends" 
-        className={` ${location.pathname === "/friends" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+        className={` ${location.pathname === "/friends" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
         <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
           <HiUsers size={30} /> Friends
         </div>
@@ -24,7 +24,7 @@ const Sidebar = () => {
 
       <Link 
         to="/group" 
-        className={` ${location.pathname === "/group" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+        className={` ${location.pathname === "/group" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
         <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
           <FaUsersRectangle size={30} /> Groups
         </div>
@@ -32,7 +32,7 @@ const Sidebar = () => {
 
       <Link 
   to="/space" 
-  className={` ${location.pathname === "/space" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+  className={` ${location.pathname === "/space" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
   <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
     <RiVideoLine size={30} /> Spaces
   </div>
@@ -40,7 +40,7 @@ const Sidebar = () => {
 
 <Link 
   to="/spacesDetail/messages" 
-  className={` ${location.pathname === "/spacesDetail/messages" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-full" : "text-green-600 font-[500]"} `}>
+  className={` ${location.pathname === "/spacesDetail/messages" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
   <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
     <FiMessageCircle size={30} /> Messages
   </div>

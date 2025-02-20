@@ -108,17 +108,22 @@ const UserProfile = () => {
   return (
     <div className=" w-full mt-24  mx-auto  rounded-lg overflow-hidden ">
       {/* Cover Photo */}
+      <div className=" bg-white rounded-2xl mb-5">
       <div className=" relative">
         <img
           src={coverPhoto || def}
           alt="Cover"
           className="w-full h-72 object-cover"
         />
-        <label className="absolute top-4 right-4 bg-white text-green-600 px-4 py-2 rounded-lg cursor-pointer text-sm">
+        <label className="absolute bottom-6 right-4 bg-white text-green-600 px-4 py-2 rounded-lg cursor-pointer text-sm">
           Edit Cover Photo
           <input type="file" className="hidden" onChange={handleCoverChange} />
         </label>
        
+        <label className=" border-green-600 border-[1px] absolute right-4   text-green-600 px-4 py-2 rounded-lg cursor-pointer  text-sm mt-4">
+        Edit Profile
+          <input type="file" className="hidden" onChange={handleProfileChange} />
+        </label>
       </div>
       <div className="p-6 flex flex-col text-center relative  l ">
         <div className=" absolute top-[-4rem] eft-[26rem] w-24 h-24 rounded-full overflow-hidden ">
@@ -135,12 +140,12 @@ const UserProfile = () => {
          <p className="text-black text-sm">UI/UX Designer</p>
          </div>
 
-        <label className=" bg-green-600  text-white px-4 py-2 rounded-lg cursor-pointer  text-sm mt-4">
-        Edit Profile
-          <input type="file" className="hidden" onChange={handleProfileChange} />
-        </label>
           </div>
       </div>
+      </div>
+
+      {/* cover photo */}
+    
          <div className=" flex justify-between ">
          <div className="w-[60%] flex flex-col ">
              {/* Profile Section */}

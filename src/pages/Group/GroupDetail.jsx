@@ -262,7 +262,7 @@ const GroupDetail = () => {
 
 
      <div className=' w-[30%]'>
-        <Link to="/group/edit" className=' text-[25px] font-[700] text-[#00973F] flex items-center cursor-pointer gap-3'>Create a Group <span className=' h-8 w-16 rounded-full bg-[#00973F] text-white flex items-center justify-center'>+</span></Link>
+        <button className=' text-[25px] font-[700] text-[#00973F] flex items-center cursor-pointer gap-3'>Create a Group <span className=' h-8 w-16 rounded-full bg-[#00973F] text-white flex items-center justify-center'>+</span></button>
         <div className=' flex flex-col gap-2 mt-3.5'>
             <div className=' relative'>
             <img src={img1} alt="" />
