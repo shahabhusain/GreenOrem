@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <div className=' flex gap-2  w-full '>
           <main className=" p-4">
-          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="bg-white p-4 rounded-lg ">
         <div className="flex items-center gap-3">
                  <img
                    src={dp}
@@ -74,7 +74,7 @@ const Home = () => {
                </div>
                {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-[600px] relative">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-[600px] h-[500px] relative">
             {/* Close Button */}
             <FaTimes
               size={22}
@@ -135,7 +135,7 @@ const Home = () => {
 
             {/* Uploaded Image Preview */}
             {image && (
-              <div className="mt-3 overflow-y-auto w-[100%] h-[100px] scrollbar-custom">
+              <div className="mt-3 overflow-y-auto w-[100%] h-[200px] scrollbar-custom">
                 <img src={image} alt="Uploaded" className=" w-full  rounded-lg" />
               </div>
             )}
@@ -154,7 +154,7 @@ const Home = () => {
 
 
             {/* Add to Post Options */}
-            <div className="flex items-center gap-4 mt-4 border-gray-100 border-[2px] p-3 rounded-full">
+            <div className="flex items-center gap-4 absolute top-[22rem] w-[550px] mt-12 border-gray-100 border-[2px] p-3 rounded-full">
               <input
                 type="text"
                 placeholder="Add to your post..."
@@ -204,7 +204,7 @@ const Home = () => {
       </div>
     </div>
        {/*  */}
-       <div className="mt-4 bg-white p-4 rounded-lg shadow-md">
+       <div className="mt-4 bg-white p-4 rounded-lg ">
          <div className=' flex justify-between'>
          <h4 className="font-bold flex items-center gap-2"> <img src={dp} alt="" /> <span className=' flex flex-col gap-1'>Jane Smith <p className=' text-[14px] font-[400] flex items-center gap-1 text-green-600'>30m • <FaEarthAfrica size={10} /></p></span></h4>
          <div className="relative">
@@ -252,7 +252,7 @@ const Home = () => {
 
 
     {/*  */}
-    <div className="mt-4 bg-white p-4 rounded-lg shadow-md">
+    <div className="mt-4 bg-white p-4 rounded-lg ">
          <div className=' flex justify-between'>
          <h4 className="font-bold flex items-center gap-2"> <img src={dp} alt="" /> <span className=' flex flex-col gap-1'>Jane Smith <p className=' text-[14px] font-[400] flex items-center gap-1 text-green-600'>30m • <FaEarthAfrica size={10} /></p></span></h4>
          <div className="relative">
@@ -301,7 +301,7 @@ const Home = () => {
 
 
       {/*  */}
-      <div className="mt-4 bg-white p-4 rounded-lg shadow-md">
+      <div className="mt-4 bg-white p-4 rounded-lg ">
          <div className=' flex justify-between'>
          <h4 className="font-bold flex items-center gap-2"> <img src={dp} alt="" /> <span className=' flex flex-col gap-1'>Jane Smith <p className=' text-[14px] font-[400] flex items-center gap-1 text-green-600'>30m • <FaEarthAfrica size={10} /></p></span></h4>
          <div className="relative">

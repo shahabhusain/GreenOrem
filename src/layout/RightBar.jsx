@@ -7,7 +7,7 @@ const RightBar = () => {
   return (
     <div className=' w-full max-w-[280px] mt-24 '>
           <aside className=" ">
-               <div className='p-4 bg-white rounded-2xl rounded-tr-[0px] rounded-br-[0px] shadow-md'>
+               <div className='p-4 bg-white rounded-2xl rounded-tr-[0px] rounded-br-[0px] '>
                <h3 className="font-semibold text-[20px] text-green-600">Events</h3>
                <div className="mt-3 p-3 bg-[#2222221F] rounded-lg flex flex-col gap-1">
                 <img src={gar} alt="" />

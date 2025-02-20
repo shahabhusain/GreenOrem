@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <div className='w-[355px] mt-6'>
   <aside className=" ">
-       <div className=' bg-white   py-12  rounded-tl-[0px] rounded-2xl shadow-md'>
+       <div className=' bg-white   py-12  rounded-tl-[0px] rounded-2xl '>
        <nav className="flex flex-col gap-8">
       <Link 
         to="/friends" 
@@ -47,7 +47,7 @@ const Sidebar = () => {
 </Link>
     </nav>
        </div>
-    <div className="mt-3 bg-white px-4 py-6  rounded-2xl shadow-md">
+    <div className="mt-3 bg-white px-4 py-6  rounded-2xl ">
       <h3 className="text-[28px] font-bold text-green-600 mx-4">Organizations</h3>
       <div className="mt-3 p-3 bg-[#2222221F] rounded-2xl flex items-center gap-2 mx-6">
         <img src={img1} alt="" />
