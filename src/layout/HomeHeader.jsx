@@ -195,7 +195,9 @@ const HomeHeader = () => {
                   <li className=" list-none cursor-pointer text-[#475467] text-[16px] font-[600]">Cookie setting</li>
                  </div>
                 {/* Logout Button */}
-                <button className="w-full bg-green-600 text-white p-2 rounded font-[600] cursor-pointer  text-center mt-4">Log out</button>
+                 <button className="w-full bg-green-600 text-white p-2 rounded font-[600] cursor-pointer  text-center mt-4">
+                 <Link to="/signup">Log out</Link>
+                 </button>
               </div>
             )}
 

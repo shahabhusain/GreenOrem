@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useModalStore from "../../../store/Model";
+import { Link } from "react-router-dom";
 
 const interestsList = [
   "Interest 1", "Interest 2", "Interest 3", "Interest 4",
@@ -46,10 +47,10 @@ const InterestSelection = () => {
             </div>
           ))}
         </div>
-        <button
-          className="mt-6 w-full py-2 bg-green-600 text-white rounded-md font-medium text-lg"
-        >
+        <button className="mt-12 w-full py-2 bg-green-600 text-white rounded-md font-medium text-lg">
+        <Link to="/">
           NEXT
+        </Link>
         </button>
       </div>
     </div>

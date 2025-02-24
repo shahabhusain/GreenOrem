@@ -35,7 +35,7 @@ const GroupCard = ({ viewMode = false }) => {
         
         {/* Action button */}
         <button
-          className={`px-4 py-1.5 rounded-md text-white text-sm ${
+          className={`px-4 py-1.5 rounded-full text-white text-sm ${
             viewMode ? 'bg-[#00973F]' : 'bg-green-500'
           } hover:bg-green-700 transition-colors`}
         >

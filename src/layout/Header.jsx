@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/LOGO.png'
 const Header = () => {
   return (
-   <div className=' shadow-sm fixed top-0 z-[1000]'>
+   <div className=' shadow-sm fixed top-0 z-[1000] w-full'>
      <div className=' w-[90%] mx-auto '>
       <div className=' flex item-center justify-between py-6'>
         <img src={logo} alt="" />

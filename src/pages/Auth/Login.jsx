@@ -6,7 +6,7 @@ import Opper from '../../components/Auth/Login/Opper'
 
 const Login = () => {
   return (
-    <div>
+    <div className=' mt-32'>
         <Form />
         <Welcome />
         <Oppertunities />
