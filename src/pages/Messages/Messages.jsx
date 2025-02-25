@@ -47,14 +47,7 @@ const Messages = () => {
   };
 
   return (
-    <div className="flex h-[620px] w-[98%] mx-auto mt-24 rounded-lg overflow-hidden">
-      {/* Left sidebar */}
-        <div className="p-4">
-          <button className="bg-green-600 text-white rounded-md py-2 px-4 flex items-center gap-2">
-            <MessageCircle size={20} />
-            <span>Messages</span>
-          </button>
-        </div>
+    <div className="flex h-[620px] w-full mx-auto mt-24 rounded-lg overflow-hidden">
 
       <div className="w-1/3 border-r border-gray-200 bg-white flex flex-col">
         {/* Messages button */}

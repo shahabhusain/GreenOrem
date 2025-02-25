@@ -22,7 +22,6 @@ export const router = createBrowserRouter(
       {/* Main layout with Sidebar and RightBar */}
       <Route path="/" element={<Layout1 />}>
         <Route index element={<Home />} />
-        <Route path="/friends" element={<Friends />} />
       </Route>
 
       {/* Group layout */}
@@ -31,17 +30,14 @@ export const router = createBrowserRouter(
         <Route path="/group/detail" element={<GroupDetail />} />
         <Route path="/group/edit" element={<Edite />} />
         <Route path="/group/user" element={<UserProfile />} />
+        <Route path="/group/space" element={<Spaces />} />
+        <Route path="/group/friends" element={<Friends />} />
+        <Route path="/group/messages" element={<Messages />} />
       </Route>
-
-      <Route path="/space" element={<GroupLayout />}>
-        <Route index element={<Spaces />} />
-      </Route>
-
 
       {/* Spaces detail layout */}
       <Route path="spacesDetail" element={<VideoLayout />}>
         <Route index element={<SpacesDetail />} />
-        <Route path="/spacesDetail/messages" element={<Messages />} />
       </Route>
 
       {/* Authentication Routes */}

@@ -4,7 +4,7 @@ import { FaUsersRectangle } from "react-icons/fa6";
 import { RiVideoLine } from "react-icons/ri";
 import img1 from '../assets/img1.png'
 import img2 from '../assets/img2.png'
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaHome } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 import { FiMessageCircle } from "react-icons/fi";
 const Sidebar = () => {
@@ -14,9 +14,18 @@ const Sidebar = () => {
   <aside className=" ">
        <div className=' bg-white   py-12  rounded-tl-[0px] rounded-2xl '>
        <nav className="flex flex-col gap-8">
+
+       <Link 
+        to="/" 
+        className={` ${location.pathname === "/" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
+        <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
+          <FaHome size={30} /> Home
+        </div>
+      </Link>
+
       <Link 
-        to="/friends" 
-        className={` ${location.pathname === "/friends" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
+        to="/group/friends" 
+        className={` ${location.pathname === "/group/friends" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
         <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
           <HiUsers size={30} /> Friends
         </div>
@@ -31,16 +40,16 @@ const Sidebar = () => {
       </Link>
 
       <Link 
-  to="/space" 
-  className={` ${location.pathname === "/space" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
+  to="/group/space" 
+  className={` ${location.pathname === "/group/space" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
   <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
     <RiVideoLine size={30} /> Spaces
   </div>
 </Link>
 
 <Link 
-  to="/spacesDetail/messages" 
-  className={` ${location.pathname === "/spacesDetail/messages" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
+  to="/group/messages" 
+  className={` ${location.pathname === "/group/messages" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
   <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
     <FiMessageCircle size={30} /> Messages
   </div>

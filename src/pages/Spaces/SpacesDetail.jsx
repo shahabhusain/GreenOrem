@@ -143,7 +143,7 @@ const SpacesDetail = () => {
       {/* Sidebar with recommended videos */}
       <div className="w-full md:w-80 lg:w-96 p-4 border-t md:border-t-0 md:border-l border-gray-200">
         {/* Filter tags */}
-        <div className="flex items-center space-x-2 overflow-x-auto pb-3 whitespace-nowrap mb-4">
+        {/* <div className="flex items-center space-x-2 overflow-x-auto pb-3 whitespace-nowrap mb-4">
           <button className="px-3 py-1 bg-black text-white text-sm rounded-full">All</button>
           <button className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">Gaming</button>
           <button className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">FC Barcelona</button>
@@ -152,7 +152,7 @@ const SpacesDetail = () => {
           <button className="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
             <ChevronRight size={16} />
           </button>
-        </div>
+        </div> */}
         
         {/* Recommended videos */}
         <div className="space-y-3">

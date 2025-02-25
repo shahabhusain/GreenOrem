@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlinePicture } from "react-icons/ai";
 import { RiCalendarEventFill } from "react-icons/ri";
 import { MdOutlinePoll } from "react-icons/md";
@@ -15,45 +15,58 @@ import { FaSave, FaLink, FaEyeSlash, FaFlag } from 'react-icons/fa';
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState([]);
     const [eventDate, setEventDate] = useState("");
-    const [pollOptions, setPollOptions] = useState(["", ""]);
-  
     const [isOpen1, setIsOpen1] = useState(false);
-
-    const toggleDropdown1 = () => {
-      setIsOpen1(!isOpen1);
-    };
-
     const [isOpen, setIsOpen] = useState(false);
-
-    const toggleDropdown = () => {
-      setIsOpen(!isOpen);
-    };
-
     const [isOpen2, setIsOpen2] = useState(false);
-
-    const toggleDropdown2 = () => {
-      setIsOpen2(!isOpen2);
-    };
-
     const [isOpen3, setIsOpen3] = useState(false);
 
-    const toggleDropdown3 = () => {
-      setIsOpen3(!isOpen3);
-    };
+
+const toggleDropdown1 = (event) => {
+  event.stopPropagation(); // Prevent click from bubbling to parent
+  setIsOpen1((prev) => !prev);
+};
+
+const toggleDropdown = (event) => {
+  event.stopPropagation();
+  setIsOpen((prev) => !prev);
+};
+
+const toggleDropdown2 = (event) => {
+  event.stopPropagation();
+  setIsOpen2((prev) => !prev);
+};
+
+const toggleDropdown3 = (event) => {
+  event.stopPropagation();
+  setIsOpen3((prev) => !prev);
+};
+
+// Close dropdowns when clicking outside
+useEffect(() => {
+  const handleClickOutside = () => {
+    setIsOpen1(false);
+    setIsOpen(false);
+    setIsOpen2(false);
+    setIsOpen3(false);
+  };
+
+  document.addEventListener("click", handleClickOutside);
+  return () => {
+    document.removeEventListener("click", handleClickOutside);
+  };
+}, []);
     // Handle Image Upload
+
     const handleImageUpload = (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        setImage(URL.createObjectURL(file));
-      }
+      const files = Array.from(e.target.files); // Convert FileList to an array
+      const imageUrls = files.map((file) => URL.createObjectURL(file));
+      setImage((prevImages) => [...prevImages, ...imageUrls]); // Append new images
     };
-  
- 
-  
+    
   return (
-    <div className=' flex gap-2  w-full '>
+    <div className=' flex gap-2  w-full  '>
           <main className=" p-4">
           <div className="bg-white p-4 rounded-lg ">
         <div className="flex items-center gap-3">
@@ -70,7 +83,7 @@ const Home = () => {
                    onClick={() => setIsModalOpen(true)}
                    readOnly // Prevents typing (triggers modal instead)
                  />
-                 <BsThreeDots size={20} className="cursor-pointer" />
+                 <BsThreeDots onClick={() => setIsModalOpen(true)} size={20} className="cursor-pointer" />
                </div>
                {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
@@ -134,11 +147,15 @@ const Home = () => {
             />
 
             {/* Uploaded Image Preview */}
-            {image && (
-              <div className="mt-3 overflow-y-auto w-[100%] h-[200px] scrollbar-custom">
-                <img src={image} alt="Uploaded" className=" w-full  rounded-lg" />
-              </div>
-            )}
+      {/* Uploaded Image Preview */}
+{image.length > 0 && (
+  <div className="mt-3 overflow-y-auto w-full h-[200px] flex gap-2">
+    {image.map((imgSrc, index) => (
+      <img key={index} src={imgSrc} alt={`Uploaded ${index}`} className="rounded-lg object-cover" />
+    ))}
+  </div>
+)}
+
 
             {/* Event Date Input */}
             {eventDate && (
@@ -176,21 +193,21 @@ const Home = () => {
               </label>
 
               {/* Event Date Picker */}
-              <FaCalendarAlt
+              {/* <FaCalendarAlt
                 size={22}
                 className="cursor-pointer text-green-600"
                 onClick={() => setEventDate(new Date().toISOString().split("T")[0])} // Set today's date
-              />
+              /> */}
 
               {/* Poll Creator */}
-              <FaPoll
+              {/* <FaPoll
                 size={22}
                 className="cursor-pointer text-green-600"
                 onClick={() => setPollOptions(["", ""])} // Start with two options
               />
                <button className="py-1 px-5 bg-green-600 text-white rounded-full font-medium">
                 Post
-              </button>
+              </button> */}
             </div>
 
          
@@ -198,9 +215,9 @@ const Home = () => {
         </div>
       )}
       <div className="flex justify-between gap-4 text-green-600 mt-3 w-full">
-        <span className=' flex items-center justify-center gap-2 py-2 px-5 w-full bg-gray-100 rounded-full cursor-pointer'><AiOutlinePicture size={20} /> Media</span>
-        <span className=' flex items-center justify-center gap-2 py-2 px-5 w-full bg-gray-100 rounded-full cursor-pointer'><RiCalendarEventFill size={20} /> Event</span>
-        <span className=' flex items-center justify-center gap-2 py-2 px-5 w-full bg-gray-100 rounded-full cursor-pointer'><MdOutlinePoll size={20} /> Poll</span>
+        <span onClick={() => setIsModalOpen(true)} className=' flex items-center justify-center gap-2 py-2 px-5 w-full bg-gray-100 rounded-full cursor-pointer'><AiOutlinePicture size={20} /> Media</span>
+        <span onClick={() => setIsModalOpen(true)} className=' flex items-center justify-center gap-2 py-2 px-5 w-full bg-gray-100 rounded-full cursor-pointer'><RiCalendarEventFill size={20} /> Event</span>
+        <span onClick={() => setIsModalOpen(true)} className=' flex items-center justify-center gap-2 py-2 px-5 w-full bg-gray-100 rounded-full cursor-pointer'><MdOutlinePoll size={20} /> Poll</span>
       </div>
     </div>
        {/*  */}
@@ -310,7 +327,7 @@ const Home = () => {
         className="cursor-pointer"
         onClick={toggleDropdown2}
       />
-      {isOpen2 && (
+      {isOpen2 ? (
         <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1">
             <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -331,7 +348,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-      )}
+      ) : ""}
     </div>
          </div>
       <p className=' mt-5'>Exciting Tour with my friends  ✨🌈</p>

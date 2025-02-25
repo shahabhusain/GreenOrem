@@ -5,7 +5,7 @@ import RightBar from '../../layout/RightBar';
 // Define ProfileCard component first
 const ProfileCard = () => {
   return (
-    <div className="flex justify-between w-[555px]  p-3 bg-white rounded-lg  mb-2">
+    <div className="flex justify-between  p-3 bg-white rounded-lg  mb-2">
       <div className="flex items-center space-x-3">
         <div className="relative">
           <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
@@ -16,7 +16,7 @@ const ProfileCard = () => {
             />
           </div>
         </div>
-        <div className=' flex justify-between  w-[273px]'>
+        <div className=' flex justify-between  w-[443px]'>
           <div>
           <h3 className="font-semibold text-sm">John Lake</h3>
           <p className="text-xs text-gray-600">University of California</p>
@@ -37,9 +37,9 @@ const Friends = () => {
   const profiles = Array(8).fill(null);
   
   return (
-   <div className=' flex gap-2 w-full'>
+   <div className=' flex gap-2 w-full mt-24'>
    <div className=' flex flex-col'>
-    <div className=' bg-white p-4 rounded-xl  w-full mt-4'>
+    <div className=' bg-white p-4 rounded-xl  w-full '>
       <div className="grid grid-cols-2 w-full">
         {profiles.map((_, index) => (
           <ProfileCard key={index} />
