@@ -7,12 +7,14 @@ import img2 from '../assets/img2.png'
 import { FaChevronDown, FaHome } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 import { FiMessageCircle } from "react-icons/fi";
+import { MdArticle } from "react-icons/md";
+import { MdEventNote } from "react-icons/md";
 const Sidebar = () => {
     const location = useLocation();
   return (
     <div className='w-[355px] mt-6'>
   <aside className=" ">
-       <div className=' bg-white   py-12  rounded-tl-[0px] rounded-2xl '>
+       <div className=' bg-white   py-6  rounded-tl-[0px] rounded-2xl '>
        <nav className="flex flex-col gap-8">
 
        <Link 
@@ -35,7 +37,7 @@ const Sidebar = () => {
         to="/group" 
         className={` ${location.pathname === "/group" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
         <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
-          <FaUsersRectangle size={30} /> Groups
+          <FaUsersRectangle size={30} /> Organizations
         </div>
       </Link>
 
@@ -54,9 +56,25 @@ const Sidebar = () => {
     <FiMessageCircle size={30} /> Messages
   </div>
 </Link>
+
+<Link 
+  to="/group/article" 
+  className={` ${location.pathname === "/group/article" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
+  <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
+    <MdArticle size={30} /> Article
+  </div>
+</Link>
+
+<Link 
+  to="/group/events" 
+  className={` ${location.pathname === "/group/events" ? "text-green-600 font-[500] bg-gray-100 py-1.5 border-l-8 rounded-l-md" : "text-green-600 font-[500]"} `}>
+  <div className="flex items-center gap-2 cursor-pointer px-6 text-[18px]">
+    <MdEventNote size={30} /> Events
+  </div>
+</Link>
     </nav>
        </div>
-    <div className="mt-3 bg-white px-4 py-6  rounded-2xl ">
+    <div className="mt-3 bg-white px-4 py-6 overflow-y-auto h-[180px] scrollbar-custom  rounded-2xl ">
       <h3 className="text-[28px] font-bold text-green-600 mx-4">Organizations</h3>
       <div className="mt-3 p-3 bg-[#2222221F] rounded-2xl flex items-center gap-2 mx-6">
         <img src={img1} alt="" />

@@ -15,6 +15,12 @@ import GroupDetail from "../pages/Group/GroupDetail";
 import Edite from "../pages/Group/Edite";
 import UserProfile from "../pages/home/UserProfile";
 import Messages from "../pages/Messages/Messages";
+import Articles from "../pages/Ariticles/Articles";
+import ArticlesDetail from "../pages/Ariticles/AriclesDetail";
+import CreateArticles from "../pages/Ariticles/CreateArticles";
+import Events from "../pages/Events/Events";
+import CreateEvent from "../pages/Events/CreateEvent";
+import EventDetail from "../pages/Events/EventDetail";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,12 +33,18 @@ export const router = createBrowserRouter(
       {/* Group layout */}
       <Route path="/group" element={<GroupLayout />}>
         <Route index element={<Group />} />
-        <Route path="/group/detail" element={<GroupDetail />} />
+        <Route path="/group/detail/:organization_id" element={<GroupDetail />} />
         <Route path="/group/edit" element={<Edite />} />
         <Route path="/group/user" element={<UserProfile />} />
         <Route path="/group/space" element={<Spaces />} />
         <Route path="/group/friends" element={<Friends />} />
         <Route path="/group/messages" element={<Messages />} />
+        <Route path="/group/article" element={<Articles />} />
+        <Route path="/group/articleDetail/:article_id" element={<ArticlesDetail />} />
+        <Route path="/group/createArticle" element={<CreateArticles />} />
+        <Route path="/group/events" element={<Events />} />
+        <Route path="/group/create_events" element={<CreateEvent />} />
+        <Route path="/group/eventDetail/:event_id" element={<EventDetail />} />
       </Route>
 
       {/* Spaces detail layout */}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { axiosPrivateForm } from '../../store/axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-const Edite = () => {
+const CreateArticles = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [title, setTitle] = useState('');
@@ -25,24 +25,24 @@ const Edite = () => {
   // Handle API Submission
   const handlePublish = async () => {
     if (!title || !description || !selectedCategory || !image) {
-      toast.success('Please fill in all fields');
+      alert('Please fill in all fields');
       return;
     }
 
     setLoading(true);
     const formData = new FormData();
-    formData.append('organization_name', title);
-    formData.append('organization_category', selectedCategory);
-    formData.append('organization_about', description);
-    formData.append('cover_image', image);
+    formData.append('article_title', title);
+    formData.append('article_category', selectedCategory);
+    formData.append('article_description', description);
+    formData.append('image_url', image);
 
     try {
-      const response = await axiosPrivateForm.post('/organization/create-organization', formData);
+      const response = await axiosPrivateForm.post('/article/create-article', formData);
 
-      toast.success('Organization Published Successfully!');
+      toast.success('Article Published Successfully!');
       console.log(response.data);
     } catch (error) {
-      console.error('Error Organization:', error);
+      console.error('Error publishing article:', error);
       toast.error('Failed to publish article.');
     } finally {
       setLoading(false);
@@ -51,8 +51,8 @@ const Edite = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 flex justify-center mt-20">
+      <ToastContainer />
       <div className="w-full bg-white rounded-2xl p-8 shadow-sm">
-        <ToastContainer />
         {/* Image Upload and Preview */}
         <div className="border-2 border-dashed border-green-200 rounded-lg p-10 mb-8 flex flex-col items-center justify-center">
           {imagePreview ? (
@@ -72,7 +72,7 @@ const Edite = () => {
           <input
             type="text"
             className="w-full p-3 border border-gray-200 rounded-lg"
-            placeholder="Enter Organization title..."
+            placeholder="Enter article title..."
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -118,4 +118,4 @@ const Edite = () => {
   );
 };
 
-export default Edite;
+export default CreateArticles;
